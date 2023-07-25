@@ -1,0 +1,1078 @@
+﻿@charset "UTF-8";
+/* index.css  2018-08-31 */
+
+
+
+strong {
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+
+
+
+img {
+	width: 50%;
+	max-width: 320px;
+	display: inline;
+}
+
+p>img {/* イメージの前にマージンを開けたい場合は、pタグの中に入れる  2016.05.18 */
+	margin-top: 10px;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    color: #222222;
+    background-color: #fff;
+    background-color: #f8f8f8;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+    position: relative;
+	font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, Verdana, sans-serif;
+}
+
+#container {
+    background-color: #e9ecf4;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+a {
+    color: #52658c;
+    text-decoration: underline;
+}
+
+.sub {
+    font-size: 0.8em;
+}
+
+
+
+/* HEADER */
+header {
+    width: 100%;
+    background-image: url(../common/header_bg.jpg);
+    background-color: #152144;
+    height: 50px;
+    position: relative;
+    border-bottom: 1px solid #fff;
+    margin-bottom: 19px;
+    overflow: hidden;
+}
+
+header>#logo {
+	position: absolute;
+	left: 17px;
+	top: 4px;
+	width: 97px;
+}
+header>#logo img{
+	width: 100%;
+}
+
+header>#title {
+	word-break: break-all;
+	position: absolute;
+	left: 17px;
+	top: 30px;
+	color: #fff;
+	font-size: 12px;
+	line-height: 1;
+	margin-right: 450px;
+}
+
+
+header>#title>a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+#search {
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    width: 319px;
+    height: 26px;
+    border-radius: 10px;
+    background:#fff url(../common/search_button.png) no-repeat 0 0;
+    background-size:25px;
+}
+
+#search input {
+    background-color: transparent;
+    padding: 1px 25px;
+    height: 26px;
+    width: 290px;
+    font-size: 1em;
+    padding-right: 0px;
+    border: 0px;
+    outline: aliceblue;
+}
+#search>div {
+    margin: 0;
+    width: 319px;
+    height: 26px;
+    position: relative;
+}
+
+#searchHistory {
+    margin-top: 2px;
+    padding: 3px;
+    background-color: #fff;
+    width: 319px;
+    height: auto;
+    display: none;
+    border: 1px solid #ccc;
+    font-size: 0.8em;
+    z-index: 9999;
+}
+#searchHistory li{
+    padding: 3px 10px;
+}
+#searchHistory a{
+    display: block;
+    text-decoration: none;
+}
+
+
+input:focus {
+    outline: none;
+}
+
+#search_button {
+    display: none;
+}
+
+
+
+
+/* MAIN */
+#main {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+
+
+/* NAV */
+#nav {
+	float: left;
+	position: relative;
+}
+
+nav {
+    width: 260px;
+    margin-left: 10px;
+}
+
+
+nav>ul>li {
+    margin-bottom: 5px;
+}
+
+nav>ul>li>span {
+    display: block;
+    background-color: #344273;
+    width: 250px;
+}
+nav>ul>li>span>a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+nav>ul>li>span>a>em {
+    margin-right: 4px;
+}
+
+
+
+nav>ul>li>ul {
+    margin-bottom: 5px;
+}
+
+nav>ul>li>ul>li>span {
+    display: block;
+    background-color: #6777a3;
+    width: 250px;
+    border-top: 1px solid #fff;
+}
+
+nav>ul>li>ul>li>span>a {
+    display: block;
+    padding: 13px;
+    color: #fff;
+    border-left: 11px solid #8fa2cc;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+nav>ul>li>ul>li.now {
+    background-image: url(../common/tri.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
+
+
+/* CONTENT */
+#searchResults {
+    display: none;
+}
+
+.chapterIndex {
+}
+.chapterIndex>div {
+	overflow: hidden;
+}
+.chapterIndex>h1>em {
+    display: none;
+}
+.chapterIndex ul{
+	margin: 20px;
+}
+.chapterIndex li{
+	margin: 20px 0;
+	text-indent: -1em;
+	margin-left: 1em;
+}
+.chapterIndex li:before{
+	content: '・';
+}
+
+#content>#contentInner article {
+    display: none;
+}
+
+#content {
+	word-break: break-all;
+    float: right;
+    width: 100%;
+    margin-left: -270px;
+}
+#contentInner {
+    padding-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 270px;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+
+#spTopImage {
+    display: none;
+}
+
+#topImage img{
+	width: auto;
+	max-width: 100%;
+}
+
+#topImage{
+	text-align: center;
+    margin: 40px 30px;
+}
+#topText {
+    border-top: 1px solid #152144;
+    border-bottom: 1px solid #152144;
+    margin: 0 30px 30px 30px;
+    padding: 10px 0;
+}
+
+#topText>h2 {
+    padding: 5px 10px;
+    font-size: 36px;
+    letter-spacing: 3px;
+    font-weight: normal;
+    color: #152144;
+}
+
+#topText>p {
+    padding: 5px 10px;
+}
+
+
+#printAll {
+    text-align: center;
+    margin: 0 30px 10px 0;
+    display: block;
+	border: 1px solid #344273;
+    width: 230px;
+}
+#printAll div {
+    padding: 10px;
+    color: #344273;
+    font-size: 12px;
+    text-decoration: none;
+	cursor: pointer;
+}
+#printAll img {
+    width: 24px;
+    margin-right: 10px;
+}
+
+/*#printCaption {
+	text-align: right;
+	font-size: 11px;
+	margin: 0 25px;
+}*/
+
+.spHeader{
+    display: none;
+}
+
+#contentInner h1{
+    color: #152144;
+    font-weight: normal;
+    letter-spacing: 3px;
+    padding: 10px 20px;
+    border-bottom: 2px solid #e9ecf4;
+    font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.page {
+    padding: 10px 20px 30px 20px;
+}
+
+.page p:not(:nth-last-child) {
+    margin-bottom: 20px;
+}
+/* .page直下でないsection（参考など）の間も50pxなのはでかすぎるため、下を変更 2016.05.17 */
+.page section {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+/* .page直下でないsection（参考など）の間も50pxなのはでかすぎるため、下を変更 2016.05.17 */
+.page>section {
+    margin-top: 0px;
+    margin-bottom: 5em;
+}
+.page div {
+    margin-bottom: 20px;
+}
+
+.page h2 {
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: normal;
+    border-bottom: 1px dotted #aaaaaa;
+    margin-bottom: 10px;
+}
+.page h2>a {
+    text-decoration: none;
+}
+
+
+.page h3 {
+    font-size: 18px;
+    border-left: solid 5px #344273;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.page em {
+    background-color: #ffff88;
+}
+#indexInner em {
+    background-color: #ffff88;
+}
+#searchResults em {
+    font-weight: bold;
+}
+
+.page ol {
+	list-style-type: decimal;
+	font-weight: bold;
+	margin: 0 0 0 2.5em;  /* 二桁の手順の手順番号10の位が表示されないため、左マージンを1.5em→2.5emとした 2017.07.20 */
+	padding: 0;
+}
+
+.page ol li {
+	margin-bottom: 3em; /* 小さい気がしたので2em→3emとした 2016.05.17 */
+}
+
+.caption ol li, .caution ol li { /* 参考内の手順は手順間が小さいほうが良い 2016.05.30 */
+	margin-bottom: 1em;
+}
+
+.page ol li section{ /* 手順内の参考がくっつかないように調整 2016.05.17 */
+	margin-top: 1em;
+}
+
+.page ol p {
+	font-weight: normal;
+	/*margin-bottom: 10px;   ..page ol imgの追加に伴い、削除 2016.05.30 */
+}
+
+.page ol img { /* 手順内の画像がくっつかないように調整 2016.05.17 */
+	margin-top: 10px;
+}
+
+.page ol li table {/* li内のtableが太字になってしまうのを修正するべく新規追加 2016.05.18 */
+	font-weight: normal;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+
+
+.list {
+    margin-bottom: 30px;
+}
+
+.list p {
+    margin-bottom: 10px;
+}
+.decimal {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 1px solid #aaaaaa;
+}
+tr {
+}
+th {
+    padding: 5px 10px;
+    border-right: 1px dashed #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    word-break: break-all;
+}
+td {
+    padding: 5px 10px;
+    border-right: 1px dashed #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    word-break: break-all;
+}
+tr td:nth-last-child(1){
+    border-right: none;
+}
+tr th:nth-last-child(1){
+    border-right: none;
+}
+/* pタグにテーブルがくっつくのが嫌なので、追加 2016.05.17 */
+p+table {
+    margin-top:10px;
+}
+
+
+
+
+.caption {
+    border-left: 5px solid #6777a3;
+    background-color: #e9ecf4;
+    padding: 10px 12px;
+}
+
+.caption>h3 {
+    color: #152144;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: bold;
+    border: none;
+    padding: 0;
+	margin-bottom:5px;  /* キャプション内のタイトル下のマージンがデカイので上書きするべく追加 2016.05.17 */
+}
+
+.caption>p {  /* キャプション内のpタグがくっつくので、少しマージンを追加 2016.05.27 */
+	margin-bottom:5px;
+}
+
+.caution>.caption {
+    margin-top: 10px;
+}
+
+.caution {
+    border-left: 5px solid #a82626;
+    background-color: #ffeeee;
+    padding: 10px 12px;
+}
+
+.caution>h3 {
+    color: #a82626;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: bold;
+    border: none;
+    padding: 0;
+	margin-bottom:5px;  /* キャプション内のタイトル下のマージンがデカイので上書きするべく追加 2016.05.17 */
+}
+
+.caution>p {  /* キャプション内のpタグがくっつくので、少しマージンを追加 2016.05.27 */
+	margin-bottom:5px;
+}
+
+.caption>.caution {
+    margin-top: 10px;
+}
+
+.frame {
+    border: 1px solid #aaaaaa;
+    padding: 10px;
+}
+
+
+
+/* FOOTER */
+footer{
+    background-color: #344273;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #fff;
+    overflow: hidden;
+}
+footer a {
+    color: #fff;
+}
+
+#enquete {
+    float: left;
+    text-align: left;
+}
+
+#copy {
+    float: right;
+    text-align: right;
+}
+#printCopy {
+	display: none;
+    text-align: right;
+}
+
+
+
+
+/* BACK BUTTON */
+#backButton {
+    display: none;
+}
+
+/* TOP BUTTON */
+#topButton {
+    position: fixed;
+    bottom: 62px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+}
+#topButton img {
+    width: 100%;
+}
+/* HOME BUTTON */
+#homeButton {
+    display: none;
+}
+#homeButton img {
+    width: 100%;
+}
+
+
+
+
+img.icon {
+	display: inline !important;
+    width: auto !important;
+    margin: auto !important; /* 幅766を超えた場合にアイコンが文より下がってしまう問題を修正  2016.05.18 */
+    height: 22px;
+}
+
+img.actual {
+    width: auto !important;
+	max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* SP MODE */
+@media screen and (max-width: 766px){
+    img {
+        width: 60%;
+    }
+
+	.arrow img {
+		width: 40px !important;
+		display: inline !important;
+	}
+
+    body {
+        background-color: #fff;
+    }
+
+
+    /* HEADER */
+    header {
+        margin-bottom: 0px;
+    }
+
+    header>#logo {
+        position: absolute;
+        left: 17px;
+        top: 4px;
+        width: 97px;
+    }
+
+
+    header>#title {
+        width: 100%;
+    }
+
+    #search {
+		    position: absolute;
+		    right: 17px;
+		    top: 12px;
+		    width: 50%;
+		    height: 26px;
+		    border-radius: 10px;
+		    background:#fff url(../common/search_button.png) no-repeat 0 0;
+		    background-size:25px;
+		}
+
+		#search input {
+		    background-color: transparent;
+		    padding: 1px 25px;
+		    height: 26px;
+		    width: 80%;
+		    font-size: 1em;
+		    padding-right: 0px;
+		    border: 0px;
+		    outline: aliceblue;
+		}
+
+    #search>div {
+		    margin: 0;
+		    width: 100%;
+		    height: 26px;
+		    position: relative;
+		}
+
+    #searchHistory {
+		    margin-top: 2px;
+		    padding: 3px;
+		    background-color: #fff;
+		    width: 100%;
+		    height: auto;
+		    display: none;
+		    border: 1px solid #ccc;
+		    font-size: 0.8em;
+		    z-index: 9999;
+				position: relative;
+		}
+		#searchHistory li{
+		    padding: 3px 10px;
+		}
+		#searchHistory a{
+		    display: block;
+		    text-decoration: none;
+		}
+
+
+    /* MAIN */
+    #main {
+    }
+
+
+
+    /* NAV */
+	#nav {
+        float: none;
+        width: 100%;
+
+	}
+    nav {
+        float: none;
+        width: 100%;
+        margin-left: 0;
+        display: none;
+        position: relative !important;
+		top: 0 !important;
+    }
+
+
+
+    nav>ul>li {
+        margin-bottom: 5px;
+    }
+
+    nav>ul>li>span {
+        display: block;
+        background-color: #344273;
+        width: 100%;
+    }
+    nav>ul>li>span>a {
+        display: block;
+        padding: 10px;
+        color: #fff;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+    nav>ul>li>span>a>em {
+        margin-right: 4px;
+    }
+
+
+
+    nav>ul>li>ul {
+        margin-bottom: 5px;
+    }
+
+    nav>ul>li>ul>li>span {
+        display: block;
+        background-color: #6777a3;
+        width: 100%;
+        border-top: 1px solid #fff;
+    }
+
+    nav>ul>li>ul>li>span>a {
+        display: block;
+        padding: 13px;
+        color: #fff;
+        border-left: 11px solid #8fa2cc;
+        font-size: 12px;
+        text-decoration: none;
+    }
+
+
+
+
+    /* CONTENT */
+
+    #content {
+        float: none;
+        margin-left: 0;
+    }
+    #contentInner {
+        margin-right: 0;
+        margin-left: 0;
+        border-radius: 0;		/* CSS3草案 */
+        -webkit-border-radius: 0;	/* Safari,Google Chrome用 */
+        -moz-border-radius: 0;	/* Firefox用 */
+        min-height: 0;
+		padding: 0;
+    }
+
+    #spTopImage{
+        display: block;
+    }
+    #spTopImage img{
+        display: block;
+        width: auto;
+        margin: 10px auto;
+    }
+
+    #indexInner>h1{
+        display: none;
+    }
+    #indexInner>#topImage{
+        display: none;
+    }
+    #indexInner>#topText{
+        display: none;
+    }
+    #indexInner>#printAll{
+		display: none;
+    }
+	#printCaption {
+		display: none;
+	}
+
+    .spHeader{
+        display: block;
+    }
+    .spHeader a {
+        font-size: 12px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #e9ecf4;
+        text-decoration: none;
+        color: #222222;
+    }
+
+    #contentInner h1{
+        letter-spacing: 0px;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .page {
+        padding: 10px 5px 50px 5px;
+    }
+
+    .page>p, .page>section {
+    }
+
+    .page>div {
+        margin-bottom: 10px;
+    }
+
+    .page>h2 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .list {
+        margin: 0 5px 30px 5px;
+    }
+
+    .list p {
+        margin-bottom: 10px;
+    }
+
+    .decimal {
+        margin-right: 5px;
+        font-weight: bold;
+    }
+
+    .page img {
+        /*display: block;*/
+		width: 60%;
+        height: auto;
+        /*margin: 0 auto;*/
+    }
+    img.icon {
+        width: auto;
+        max-width: none;
+        height: 22px;
+        margin: auto;
+        display: inline !important;
+    }
+
+    .page th, .page td {
+    }
+
+    .page th .sub, .page td .sub {
+    }
+
+
+	table.break th {
+		text-align: left;
+		display: block;
+		border-right: none;
+		border-bottom: 1px dashed #aaaaaa;
+	}
+	table.break td {
+		display: block;
+	}
+
+
+
+    /* BACK BUTTON */
+    #backButton {
+        z-index: 200;
+        display: block;
+        position: fixed;
+        bottom: 43px;
+        right: 70px;
+        width: 48px;
+        height: 48px;
+        opacity: 0.9;
+    }
+	#backButton img {
+		width: 100%;
+	}
+
+    /* TOP BUTTON */
+    #topButton {
+        z-index: 200;
+        position: fixed;
+        bottom: 99px;
+        right: 12px;
+        width: 48px;
+        height: 48px;
+        opacity: 0.9;
+    }
+
+    /* HOME BUTTON */
+    #homeButton {
+        z-index: 200;
+        display: block;
+        position: fixed;
+        bottom: 43px;
+        right: 12px;
+        width: 48px;
+        height: 48px;
+        opacity: 0.9;
+    }
+
+    #spTopImage>img {
+        display: block;
+    }
+
+
+
+    #enquete {
+        clear: both;
+        float: none;
+        text-align: left;
+    }
+
+    #copy {
+        clear: both;
+        float: none;
+        text-align: right;
+    }
+
+
+}
+
+
+@media screen and (min-width: 767px){
+    nav {
+        display: block;
+    }
+    #search {
+        display: block;
+    }
+    #spTopImage>img {
+        display: none;
+    }
+}
+
+/* td section, td p{
+    margin-bottom: 10px !important;
+} */
+
+.indent {
+    text-indent: -1.5em;
+    margin-left: 1.5em;
+}
+
+
+
+/* アコーディオンテーブル */
+.accordionTable {
+	z-index: 1000;
+}
+.accordionTable>dt {
+    text-align: left;
+    padding: 10px 20px;
+
+    background: #555;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+	cursor: pointer;
+}
+
+
+.accordionTable>dt:before {
+    content: "▶ ";
+    font-size: 0.75em;
+    color: #fff;
+}
+.accordionTable>dt.nowOpen:before {
+    content: "▼ ";
+}
+
+.accordionTable>dd {
+	display: none;
+}
+
+.accordionTable>dd>dl {
+    margin: 0;
+    border: 1px solid #ddd;
+}
+.accordionTable>dd>dl>dt {
+    padding: 10px;
+    background: #eee;
+    margin: 0;
+    border-bottom: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+}
+
+.accordionTable>dd>dl>dd {
+    background: #fff;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+
+/* 用語 */
+#terms {
+	display: none;
+}
+.termsLink {
+	text-decoration: none;
+	padding-right: 14px;
+    background-image: url('../common/terms.png');
+	background-repeat: no-repeat;
+	background-position: top right;
+	background-size: 14px;
+}
+.lity-content {
+	background-color: #fff;
+	border-radius: 10px;
+	width: 98% !important;
+	height: 90%;
+	margin: 0 auto;
+	overflow-y: auto;
+}
+.lity-content>div {
+	margin: 15px;
+}
+.lity-content>div:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.lity-content h1 {
+	font-size: 20px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #aaa;
+}
+
+sup {
+	margin-right: 3px;
+}
+.lity-content img {
+	width: auto;
+	max-width: 100%;
+}
+
+.lity-content .left {
+	float: left;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.lity-content .right {
+	float: right;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+#regWord, #rdrctWord {
+	display: none;
+}
+
+.lazy{}

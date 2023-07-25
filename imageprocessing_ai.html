@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>画像処理人工知能　〜ようこそ僕らの文化祭へ〜</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="header.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2 class="title"><span class="title">Witheart
+        </span></h2>
+    </div>
+    <div class="box">
+        <div class="Lside">
+        </div>
+        <div class="background">
+            <div class="sitebox">
+                <div class="menu-list">
+                    <div class="menu_top"><a href="index.html">トップ
+                    </a></div>
+                    <div class="menu_twitter"><a href="https://twitter.com/yas_yasyu">Twitter
+                    </a></div>
+                </div>
+
+                <div class="mainpage">
+                    <div class="article-top">
+                        <h2 class="article-list">画像処理人工知能</h2>
+                        <ul>
+                            <h4 class="article-title"><li class="number">製作動機・製作目標</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    学校の課題研究の授業で製作した目覚まし時計を改善するための追加機能として人工知能を搭載するという項目が挙がり人工知能に興味を持ったため。</p>
+                                <p class="sentence">
+                                人工知能で画像を処理し、性別を判別して表示するようなものを作成する。</p>
+                            </div>
+
+                            <h4 class="article-title"><li class="number">製作方法とか</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <ul>
+                                    <li class="square">
+                                        pythonのtensorflowを使って人工知能を製作する。</li>
+                                    <li class="square">
+                                        リモコンを使って遠隔で操作できるようにする。</li>
+                                    <li class="square">
+                                        判定結果はGUIで視覚的に表示する。</li>
+                                    <li class="square">
+                                        死なない。（HP作成が死にそう・・・)</li>
+                            　  </ul>
+                            </div>
+
+                            <h4 class="article-title"><li class="number">製作内容とか</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    64bitのWindows10搭載デスクトップパソコンでpython3.6.8とArduinoを使って製作した。</p>
+                                <br>
+                                <p class="sentence">
+                                pip installやconda installで以下のライブラリをインストールする。</p>
+                                <ul>
+                                    <li class="square">tensorflow</li>
+                                    <li class="square">keras</li>
+                                    <li class="square">pyserial</li>
+                                    <li class="square">opencv</li>
+                                    <li class="square">tkinter</li>
+                                    <li class="square">pillow</li>
+                                </ul>
+                                <br>
+                                <p class="sentence">
+                                    人工知能を製作するにあたり、Python3.7.xの最新系列ではライブラリが使用できなくなってしまうためAnacondaでPython3.6.8の仮想環境を整えた。</p>
+                                <br>
+                                <hr>
+                                <p class="sentence">
+                                    まず初めに本製作の基幹となる人工知能を作成した。</p>
+                                <br>
+                                <p class="sentence">
+                                    より高精度な判定を目指すために学習用データを男女ともに約500枚ずつ用意した。</p>
+                                <p class="sentence">
+                                    人工知能についての理解、環境構築、製作の際に以下の動画を参考にして作成した。</p>
+                                <iframe width="312" height="200" src="https://ext.nicovideo.jp/thumb/sm34560255" scrolling="no" style="border:solid 1px #ccc;" frameborder="0"><a href="https://www.nicovideo.jp/watch/sm34560255">人工知能で毒キノコを判別しよう - #1 デモと環境構築</a></iframe>
+                                <br>
+                                <p class="sentence">
+                                    この動画は人工知能や環境構築についてとてもわかりやすく解説されており、初心者同然の私でもすんなりと人工知能を大まかに理解、思うような実装ができた。</p>
+                                <br>
+                                <hr>
+                                <p class="sentence">
+                                    次に、リモコンを使って遠隔操作するためにArduinoを使ってリモコンからの信号を受け取り、Windowsパソコンへ送信する受信機を製作する。</p>
+                                <p class="sentence">
+                                    学校での課題研究で使ったものを改良して使用する。</p>
+                                <br>
+                                <p class="sentence">
+                                    課題研究で製作した受信機には受信する信号が不安定でリモコンと受信機との距離が極めて近くなければ正常の動作が行われないという問題点があった。</p>
+                                <p class="sentence">
+                                    この問題の原因は、受信機とArduinoの接続ポートを間違えていたと判明したため正しいポートに接続した。また、信号を受信したかどうかが分かりづらかったために受信機にLEDを搭載し、信号を受信したかどうかを分かりやすくした。</p>
+                                <p class="sentence">
+                                    以下は製作した受信機の回路図(図1)と受信機の写真(図２)である。</p>
+                                <p claas="sentence">
+                                    Arduinoソースコードはサイト末に他のソースコードとまとめて記載する。</p>
+                                <br>
+                                <!-- ここに受信機の回路図、受信機写真 -->
+                                <img src="image/Infrared_reception.jpg" width="600" height="450" title="赤外線受信機の回路図">
+                                <p class="sentence">
+                                    受信機の回路図(図１)</p>
+                                <br>
+                                <img src="image/Infrared_receptio-photo1.jpg" width="600" height="450"title="赤外線受信機の写真1">    
+                                <p class="sentence">
+                                    受信機の写真1(図２)</p>
+                                <br>
+                                <img src="image/Infrared_receptio-photo2.jpg" width="600" height="450" title="赤外線受信機の写真2">    
+
+                                <p class="sentence">
+                                    受信機の写真2(図3)</p>
+                                <br>
+                                <hr>
+                                <p class="sentence">
+                                    次に、Windowsパソコン側でPythonを使ってArduinoから送信された信号を受信する部分である</p>
+                                <br>
+                                <p class="sentence">
+                                    本製作ではPythonによって記述するプログラムを</p>
+                                <ul>
+                                    <li class="square">人工知能の学習部分</li>
+                                    <li class="square">人工知能の判定部分</li>
+                                    <li class="square">シリアル通信を受信する部分</li>
+                                    <li class="square">判定を行う写真を撮影する部分</li>
+                                    <li class="square">視覚的な表現を行うGUI部分</li>
+                                </ul>
+                                <p class="sentence">
+                                    上記の5つの機能を分けて実行させるためにmultiprocessingライブラリのProcessを使って並列処理を行う。</p>
+                                <br>
+
+                                <p class="sentence">
+                                    並列処理によって、Arduinoからの信号を受信しながら、写真を撮影したり、GUIを表示したりすることを同時にする事が出来るようになる。</p>
+                                <p class="sentence">
+                                    Arduinoからの信号をシリアル通信を使って受信した。</p>
+                                <p class="sentence">
+                                    Arduinoから信号を受け取るするためにpyserialライブラリを使った。</p>
+                                <p class="sentence">
+                                    また、信号を受け取る動作を関数としてまとめ、multiprocessingライブラリのQueueを使って前述した並行処理で動作している他の関数に値を受け渡す。</p>
+                                <br>
+                                <hr>
+                                <p class="sentence">
+                                    最後は判定を行う写真を撮影する部分と視覚的な表現を行うGUI部分である。</p>
+                                <br>
+                                <p class="sentence">
+                                    写真を撮影するために<!--どこ社製の-->Webカメラを使う。(図３)</p>
+                                <br>
+                                <img src="image/webcamera.jpg" width="600" height="450" title="Webカメラの写真">    
+                                <p class="sentence">
+                                    使用したWebカメラの写真(図4)</p>
+                                <br>
+                                <p class="sentence">
+                                    プログラムで写真を撮影するためにOpenCVライブラリを使う。画面にWebカメラが撮っている画面を表示し、リモコンのボタンを押したタイミングで写真を撮ることが出来るようにする。</p>
+                                <br>
+                                <p class="sentence">
+                                    リモコンのボタンが押され、写真が撮られたことを確認したら人工知能の判定部分を実行し、その後GUIを起動して得られた判定数値を撮影した写真とともに表示する。</p>
+                                <p class="sentence">
+                                    GUIはTkinterライブラリを使って製作し、写真はPillowライブラリを使って表示した。</p>
+                                <br>
+                                <hr>
+                                <p class="sentence">
+                                    以上の関数をまとめたプログラムを実行することで写真を撮影し、撮影した写真に映った人物が[boy]か[girl]かを判定する。</p>
+                                    <br>
+                                <img src="image/guiimage.jpg" width="600" height="450" title="GUIの表示例">    
+                                <p class="sentence">
+                                    GUIの表示例(図5)</p>
+                            </div>
+                            <h4 class="article-title"><li class="number">製作結果</li></h4>
+                            <div class="article-sentence">
+                                <hr>    
+                                <p class="sentence">
+                                    想像していたモノが完成した。
+                                </p>
+                                <p class="sentence">
+                                    学習データが不足していたのか、偏っていたのか、判定させるべきでなかったのかは分からないが、何度かの実験を行った結果は正答率約70％と低い成果が出た。
+                                </p>
+                                <p class="sentence">
+                                    しかし、文化祭で体験した人に楽しんでもらう分には十分な成果（？）といえるのではないだろうか。（言い訳）
+                                </p>
+                                <p class="sentence">
+                                    本製作はなんとか発表することが出来たので、大成功と言えるだろう。
+                                </p>
+                            </div>
+                            <h4 class="article-title"><li class="number">謝辞とかそういった類のもの</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    本製作では多くの人の助けや知恵を借りたことで見事に大成功（？）をおさめることが出来た。
+                                </p>
+                                <br>
+                                <p class="sentence">
+                                    様々な仕事を押し付けたり、懇願したり、強要したりしたPC部員の皆さん。ご迷惑をおかけしました。晴れて引退できます。（しません。九月だったかにある競技プログラミングの大会に出ます。）
+                                </p>
+                                <br>
+                                <p class="sentence">
+                                    多くのことで私を頼ってくださった、部内外の皆様。完全にフォローに回れずすいませんでした。幾分か余裕を持って相談に来ていただければゆっくりと丁寧に説明できていたかと思いますが、自分のことで手一杯でした。ごめんなさい。
+                                </p>
+                                <br>
+                                <p class="sentence">
+                                    各部分を製作する際に参考にさせていただいたサイト様、ありがとうございました。この場でご紹介させて頂きます。
+                                </p>
+                                <br>
+                                <ul>
+                                    <li class="square"><a href="https://docs.python.org/ja/3/library/multiprocessing.html">     multiprocessing --- プロセスベースの並列処理</a></li>
+                                    <li class="square"><a href="https://gangannikki.hatenadiary.jp/entry/2018/11/15/025849">    PySerial】Python×Arduinoで制御してみる1【Lチカ】</a></li>
+                                    <li class="square"><a href="http://pynote.hatenablog.com/entry/opencv-image-io">            OpenCV - imread()、imwrite() で画像をファイルに入出力する</a></li>
+                                    <li class="square"><a href="https://qiita.com/nnahito/items/ad1428a30738b3d93762">          PythonのTkinterを使ってみる</a></li>
+                                    <li class="square"><a href="https://qiita.com/mizoe@github/items/bc56441e80b3ccd5b2a4">     Tkinterで作成したウインドウにOpenCV-Pythonの画像を表示</a></li>
+                                </ul>
+                                <p class="sentence">
+                                    製作の際にたくさん躓いたので解決するために見たサイトの数が多すぎるため、他のサイトの紹介は割愛させていただきます。
+                                </p>
+                            </div>
+                            <h4 class="article-title"><li class="number">付録</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    本項では、完成したプログラムを掲載する。
+                                </p>
+                                <br>
+                                <p class="sentence">python　リスト</p>
+                                <script src="https://gist.github.com/yasyasyu/a44bb631f9605d6e0edfbf0137b8a457.js"></script>
+                                <br>
+                                <p class="sentence">Arduino　リスト</p>
+                                <script src="https://gist.github.com/yasyasyu/997b5817bb73dda74e066310d3b83c60.js"></script>
+                            </div>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Rside">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>twitter自動ツイート</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="header.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <div class="header">
+        <h2 class="title"><span class="title">Witheart
+        </span></h2>
+    </div>
+    <div class="box">
+        <div class="Lside">
+        </div>
+        <div class="background">
+            <div class="sitebox">
+                <div class="menu-list">
+                    <div class="menu_top"><a href="index.html">トップ</a>
+                </div>
+                    <div class="menu_twitter"><a href="https://twitter.com/yas_yasyu">Twitter</a>
+                    </div>
+                </div>
+
+                <div class="mainpage">
+                    <div class="article-top">
+                        <h2 class="article-list">自動ツイート、特定の言葉にリプライするbot</h2>
+                        <ul>
+                            <h4 class="article-title"><li class="number">製作動機・製作目標</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    某５％で露出するbot的なのを作りたいと思った。</p>
+                                <p class="sentence">
+                                    化学の点数がやばかった。(元素記号がどうこうはほとんど関係ない。）</p>
+                            </div>
+
+                            <h4 class="article-title"><li class="number">製作方法とか</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <ul>
+                                    <li class="square">
+                                        twitterAPIを取得する。</li>
+                                    <li class="square">
+                                        自動ツイート出来るようにする。</li>
+                                    <li class="square">
+                                        特定の語に反応するリプライ機能を実装する。</li>
+                                    <li class="square">
+                                        運営する。</li>
+                            　  </ul>
+                            </div>
+
+                            <h4 class="article-title"><li class="number">製作内容とか</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    英語頑張って読んで、英語で指定字数以上の質問内容に答えた。</p>
+                                <br>
+                                <p class="sentence">
+                                    pip installで以下のライブラリをインストールする。</p>
+                                <ul>
+                                    <li class="square">tweepy</li>
+                                </ul>
+                                <br>
+                                <p class="sentence">
+                                    実装環境となるサーバーを「xrea」からレンタルした。</p>
+                                <p class="sentence">
+                                    レンタルサーバーでは管理者権限を行使できなかったが、標準搭載のpythonにtweepyがインストールされていたため問題には至らなかった。</p>
+                                <hr>
+                                <p class="sentence">
+                                    まず初めにpythonからツイートをした。</p>
+                                <br>
+                                    <p class="sentence">
+                                    api.update_status("text")でAPIを登録したアカウントでツイート出来るようである。</p>
+                                <p class="sentence">
+                                    これに、ツイートする内容、ツイートした時間(ツイートする内容が連続で同じだとtwitter側でブロックされてしまうのを防ぐため)を書き込んでツイートさせるようにする。</p>
+                                <p class="sentence">
+                                    ツイートさせるテキストはunicode形式でないとツイート出来なかった。当初、別でファイルを用意して読み込ませたかったが、内容を直に書くことで解決した。</p>
+                                <hr>
+                                <p class="sentence">
+                                    次に、自動でコードを実行させる。</p>
+                                <br>
+                                <p class="sentence">
+                                    この製作では、GoogleAppScript(以下GAS)を使って実行させた。</p>
+                                <p class="sentence">
+                                    GASでCGIを起動し、コード実行用のシェルスクリプトを作動させる。</p>
+                                <p class="sentence">
+                                    UrlFetchApp.fetch("URL");でURL先のCGIを起動させた。</p>
+                                <p class="sentence">
+                                    実行させる時間はGASで調整した。</p>
+                                <p class="sentence">
+                                    CGIは起動したらシェルスクリプトを、シェルスクリプトはpythonコードを実行させる用にしてある。</p>
+                                <br>
+                                <p class="sentence">
+                                    サーバーのファイル構造は以下である
+                                <img src="image/data.jpg" width="600" height="450" title="ファイル構造">
+                                <p class="sentence">
+                                    ファイル構造(図１)</p>
+                                <br>
+                                <hr>
+                                <p class="sentence">
+                                    次に、特定の語に反応し返信させる。</p>
+                                <br>
+                                <p class="sentence">
+                                    一番新しい自分宛てのツイートを参照し、まだ返してないツイートならば応答し、既に返信しているツイートならば無視するようにする。</p>
+                                <p class="sentence">
+                                    現在は数字のみを対応させているので一番大きい数字から順に受け取った数字か判定している。</p>
+                                <p class="sentence">
+                                    送られてくる数字は文字列としての数字なため直接使用できない。また、小さい数字から順に判定すると別の数字として判定されることがあった。</p>
+                                <p class="sentence">
+                                    (例:受け取った数字 14,判定した数字 1)</p>
+    
+                                <br>
+                                <p class="sentence">
+                                    自動ツイートと同じようにGASからCGIを起動してシェルスクリプトを実行し、定期的に参照するようにしている。</p>
+                            </div>
+                            <h4 class="article-title"><li class="number">製作結果</li></h4>
+                            <div class="article-sentence">
+                                <hr>    
+                                <p class=" sentence">
+                                <a href="https://twitter.com/elements_boron">作成したtwitterbot(@elements_boron)</a>
+                                </p>
+                                <p class="sentence">
+                                    自動ツイート、特定の語にリプライするbotを作成することが出来た。
+                                </p>
+                                <p class="sentence">
+                                    ツイート頻度やツイート内容などまだまだ発展させることができそうである。
+                                </p>
+                                <p class="sentence">
+                                    いつか、内容を別ファイルで用意して運営したい。
+                                </p>
+                            </div>
+                            <h4 class="article-title"><li class="number">謝辞とかそういった類のもの</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    製作する際に参考にさせていただいたサイト様、ありがとうございました。この場でご紹介させて頂きます。
+                                </p>
+                                <br>
+                                <ul>
+                                    <li class="square"><a href="https://soudakyoto-ikou.hatenadiary.jp/entry/20180321/1521620634#%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89">3日間。Pythonでつくる、TwitterカウントダウンBot</a></li>
+                                    <li class="square"><a href="https://qiita.com/yuki_bg/items/96a1608aa3f3225386b6">Twitterのbotをpythonで作成する手順</a></li>
+                                    <li class="square"><a href="https://qiita.com/tsc343/items/e51f412480ea8bf5619a">Tweepyで雑にTwitter botを作ってみた</a></li>
+                                </ul>
+                            </div>
+                            <h4 class="article-title"><li class="number">付録</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    本項では、完成したプログラムを掲載する。
+                                </p>
+                                <p class="sentence">
+                                    セキュリティのためAPIやサイトURLは伏せています。
+                                </p>
+
+                                <br>
+                                <p class="sentence">python リスト1</p>
+                                <script src="https://gist.github.com/yasyasyu/8c05f42a1c4c618691a84caf48ea630b.js"></script>
+                                <br>
+                                <p class="sentence">python　リスト2</p>
+                                <script src="https://gist.github.com/yasyasyu/be562601078c49d6936ba125587ab487.js"></script>
+                                <br>
+                                <p class="sentence">GAS　リスト</p>
+                              <script src="https://gist.github.com/yasyasyu/2e12080cc160477bada7382e3601d640.js"></script>
+                                <br>
+                                <p class="sentence">Shell　リスト</p>
+                                <script src="https://gist.github.com/yasyasyu/6546c395e1e8a6734b93feaa0b6ec33d.js"></script>
+                                <br>
+                                <p class="sentence">CGI　リスト</p>
+                                <script src="https://gist.github.com/yasyasyu/96d8cb7b6d9094548ff654f2f0152132.js"></script>
+
+                            </div>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Rside">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+AddType text/html .html
+AddOutputFilter INCLUDERS .html
+AddHandler server-parsed html
+#AddType text/x-server-persed-html .shtml .html
+Options +Includes
+Requiew all denied

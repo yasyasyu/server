@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>【P学科恒例行事】C言語大復習勉強会！　~中上級編~</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="header.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h2 class="title"><span class="title">Witheart
+        </span></h2>
+    </div>
+    <div class="box">
+        <div class="Lside">
+        </div>
+        <div class="background">
+            <div class="sitebox">
+                <div class="menu-list">
+                    <div class="menu_top"><a href="index.html">トップ
+                    </a></div>
+                    <div class="menu_twitter"><a href="https://twitter.com/yas_yasyu">Twitter
+                    </a></div>
+                </div>
+
+                <div class="mainpage">
+                    <div class="article-top">
+                        
+                        <h2 class="article-list">【P学科恒例行事】C言語大復習勉強会！　中上級問題</h2>
+                        <ul>
+                            <h4 class="article-title" id="i0">目次</h4>
+                            <div class="article-sentence">
+                                <hr>
+
+                                <ul>
+                                    <li class="square"><a href="#i0">目次</a></li> 
+                                    <li class="square"><a href="#i1">前書き</a></li> 
+                                    <li class="square"><a href="#i2">中級</a></li> 
+                                    <li class="square"><a href="#i3">上級</a></li> 
+                                    <li class="square"><a href="#i4">補足：行基本変形について</a></li> 
+                                </ul>
+                            </div>
+                            <h4 class="article-title" id="i1">前書き</h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    現段階のプログラミング入門演習の授業で扱ったことだけで解ける問題を作成しました。
+                                    <ul>
+                                        <li class="square">先ず何をすればいいかわからない。</li>
+                                        <li class="square">どう解けばいいかわからない。</li>
+                                        <li class="square">どう書けばいいかわからない。</li>
+                                    </ul>
+                                    を解決する自分なりの方法を早い内に発見し、胸を張ってプログラムを書くことが出来ると言えるようになりましょう。
+                                </p>
+                                </br>
+                                <p class="sentence-small">
+                                    <font size = "1">
+                                    どちらの問題も配列を使わなくても解くことが出来ます。が、私も上級の問題を配列ナシはめんどくさくてやりたくないです。
+                                    中級は配列を使っても使わなくても簡単に解くことが出来ます。是非、どちらもやってみてください。
+                                    </font size>
+                                </p>
+                                <br>
+                                <p class="sentence-big-cent">
+                                    <font size = "5">
+                                        解けなくても投げ出さないでください。<br>
+                                        きっと出来るようになりますから。
+                                    </font size>
+                                </p>
+                                <br>
+                                <p class="sentence">
+                                    また、解説及びサンプルコード（C,Python）を公開します。
+                                </p>
+                            </div>
+                            <br>
+                            <h4 class="article-title"  id="i2"><li class="number">中級</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    n はキーボードから受け取った数字とします。(標準入力)<br>
+                                    1 から n までの整数の 1 の位を出力してください。また、それぞれ 1 の位の個数も求めてください。
+                                </p>
+                                <fieldset class="formatbox"><legend>入力形式</legend>
+                                n
+                                </fieldset>
+                                <fieldset class="formatbox"><legend>出力形式</legend>
+                                    1<br>
+                                    2<br>
+                                    3<br>
+                                    4<br>
+                                    .<br>
+                                    .<br>
+                                    .<br>
+                                    n%10<br>
+                                    1:a, 2:b, 3:c, 4:d, . . . , 0:i, 
+                                </fieldset>
+                                <br>
+                                <fieldset class="formatbox"><legend>入力例</legend>
+                                    15
+                                </fieldset>
+                                <fieldset class="formatbox"><legend>出力例</legend>
+                                    1<br>
+                                    2<br>
+                                    3<br>
+                                    4<br>
+                                    5<br>
+                                    6<br>
+                                    7<br>
+                                    8<br>
+                                    9<br>
+                                    0<br>
+                                    1<br>
+                                    2<br>
+                                    3<br>
+                                    4<br>
+                                    5<br>
+                                    1:2, 2:2, 3:2, 4:2, 5:2, 6:1, 7:1, 8:1, 9:1, 0:1, 
+                                </fieldset>
+                                <p class="sentence">
+                                    1 の位をグループに分けて考えると 1 の位が、<br>
+                                    『１』は 1 と 11、『２』は 2 と 12、『３』は 3 と 13、『４』は 4 と 14、『５』は 5 と 15、『６』は 6、『７』は 7、『８』は 8、『９』は 9、『０』は 10、のようになります。<br>
+                                    また、数字の 1 の位は 10 で割った余りで得ることが出来ます。
+                                </p>
+                            </div>
+                            <br>
+                            <h4 class="article-title"  id="i3"><li class="number">上級</li></h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    n と n 次正方行列はキーボードから受け取った数字とします。(標準入力)<br>
+                                    掃き出し法 (行基本変形) を行い階段行列を出力してください。<br>
+                                    また、解が一意に定まらない場合は”undefined”と出力してください。
+                                </p>
+
+                                <fieldset class="formatbox"><legend>入力形式</legend>
+                                    n<br>
+                                    a<sub>11</sub>　a<sub>12</sub>　a<sub>13</sub>　…　a<sub>1n</sub>　b<sub>1</sub><br>
+                                    a<sub>21</sub>　a<sub>22</sub>　a<sub>23</sub>　…　a<sub>2n</sub>　b<sub>2</sub><br>
+                                    a<sub>31</sub>　a<sub>32</sub>　a<sub>33</sub>　…　a<sub>3n</sub>　b<sub>3</sub><br>
+                                    ︙<br>
+                                    a<sub>n1</sub>　a<sub>n2</sub>　a<sub>n3</sub>　…　a<sub>nn</sub>　b<sub>n</sub><br>
+                                
+                                </fieldset>
+                                <fieldset class="formatbox"><legend>出力形式</legend>
+                                    c<sub>11</sub>　c<sub>12</sub>　c<sub>13</sub>　…　c<sub>1n</sub>　d<sub>1</sub><br>
+                                    c<sub>21</sub>　c<sub>22</sub>　c<sub>23</sub>　…　c<sub>2n</sub>　d<sub>2</sub><br>
+                                    c<sub>31</sub>　c<sub>32</sub>　c<sub>33</sub>　…　c<sub>3n</sub>　d<sub>3</sub><br>
+                                    ︙<br>
+                                    c<sub>n1</sub>　c<sub>n2</sub>　c<sub>n3</sub>　…　c<sub>nn</sub>　d<sub>n</sub><br>
+                                </fieldset>
+                                <br>
+                                <fieldset class="formatbox"><legend>入力例１</legend>
+                                    3<br>
+                                    1 -2 -3 4<br>
+                                    2 3 4 4<br>
+                                    3 -4 -7 10
+                                </fieldset>
+                                <fieldset class="formatbox"><legend>出力例１</legend>
+                                    1 0 0 3.00000<br>
+                                    0 1 0 -2.00000<br>
+                                    0 0 1 1.00000
+                                </fieldset>
+                                <p class="sentence">
+                                入力例１は、以下の数式と同じ入出力であることを確認してください。<br>
+                                また、数字と数字の間は半角スペースです。<br>
+                                <br>
+                                    <math>
+                                        <mfenced open="[" close="]">
+                                            <mtable  columnlines="none none solid">
+                                                <mtr>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>-2</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>-3</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>4</mn>
+                                                    </mtd>
+
+                                                </mtr>
+                                                <mtr>
+                                                    <mtd>
+                                                        <mn>2</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>3</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>4</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>4</mn>
+                                                    </mtd>
+
+                                                </mtr>
+                                                <mtr>
+                                                    <mtd>
+                                                        <mn>3</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>-4</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>-7</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>10</mn>
+                                                    </mtd>
+
+                                                </mtr >
+                                            </mtable>
+                                        </mfenced>
+                                        <mo>&rarr;</mo>
+                                        <mfenced open="[" close="]">
+                                            <mtable  columnlines="none none solid">
+                                                <mtr>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>0</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>0</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>3</mn>
+                                                    </mtd>
+
+                                                </mtr>
+                                                <mtr>
+                                                    <mtd>
+                                                        <mn>0</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>0</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>-2</mn>
+                                                    </mtd>
+
+                                                </mtr>
+                                                <mtr>
+                                                    <mtd>
+                                                        <mn>0</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>0</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                </mtr >
+                                            </mtable>
+                                        </mfenced>
+                                    </math><br>
+                                <br>
+                                ベクトルと行列の授業を取ってなかったらごめんなさい。<br>
+                                ネット上に掃き出し法(行基本変形)についての解説記事はたくさんあるのでそれらを参考にしてください。<br>
+                                </p>
+                                <br>
+                                <fieldset class="formatbox"><legend>入力例２</legend>
+                                    4<br>
+                                    1 -1 1 -1 4<br>
+                                    1 1 1 1 2<br>
+                                    -1 -1 -1 0 3<br>
+                                    -1 1 1 1 0
+                                </fieldset>
+                                <fieldset class="formatbox"><legend>出力例２</legend>
+                                    1 0 0 0 1.00000<br>
+                                    0 1 0 0 -6.00000<br>
+                                    0 0 1 0 2.00000<br>
+                                    0 0 0 1 5.00000
+                                </fieldset>
+                                <p class="sentence">
+                                階段行列を導くために行列の入れ替えが発生する可能性があることに注意してください。</p><br>
+                                <br>
+                                <fieldset class="formatbox"><legend>入力例３</legend>
+                                    3<br>
+                                    2 4 1 6<br>
+                                    1 -2 -2 1<br>
+                                    -2 -5 3 5
+                                </fieldset>
+                                <fieldset class="formatbox"><legend>出力例３</legend>
+                                    1 0 0 3.86486<br>
+                                    0 1 0 -1.05405<br>
+                                    0 0 1 1.48648
+                                </fieldset>
+                                <p class="sentence">
+                                    解が小数になることもあります。<br>
+                                    出力例３では、<br>
+                                    <math>
+                                        <mo>１列目：</mo>
+                                        <mfrac>
+                                            <mn>143</mn>
+                                            <mi>37</mi>
+                                        </mfrac>
+                                        <mo>,２列目：</mo>
+                                        <mfrac>
+                                            <mn>-39</mn>
+                                            <mi>27</mi>
+                                        </mfrac>
+                                        <mo>,３列目：</mo>
+                                        <mfrac>
+                                            <mn>92</mn>
+                                            <mi>37</mi>
+                                        </mfrac>
+                                    </math>になっています。
+                                </p>
+                            </div>
+                            <br>
+                            <h4 class="article-title"  id="i4">補足：行基本変形について</h4>
+                            <div class="article-sentence">
+                                <hr>
+                                <p class="sentence">
+                                    以下３つのみを使って連立方程式を解くこと、<br>
+                                    機械的に解くことが可能な解き方がある。（調べると他にも沢山解き方があった。）
+                                    <ul>
+                                        <li class="number">１つの行に”０”でない定数をかける。</li>
+                                        <li class="number">１つの行の定数倍を別の行に加える。</li>
+                                        <li class="number">２つの行を入れ替える。</li>
+                                    </ul>
+                                </p>
+                                <p class="sentence-right">以上</p>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Rside">
+        </div>
+    </div>
+</body>
+</html>
